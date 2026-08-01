@@ -129,7 +129,7 @@
 <div class="container">
 
   <div class="meta-bar">
-    <span><span class="dot"></span> Effective Date: May 2026</span>
+    <span><span class="dot"></span> Effective Date: August 2026</span>
     <span><span class="dot"></span> Developer: Ishara Creations</span>
     <span><span class="dot"></span> Region: Sri Lanka</span>
   </div>
@@ -165,8 +165,9 @@
     <div class="sub-section">
       <h3>c) Device Identifier</h3>
       <ul>
-        <li>A unique device ID (Android ID) is used to register your device</li>
-        <li>This ID is used only to identify your device within our system</li>
+        <li>A device identifier is generated from your device's Android ID, then hashed (SHA-256) before it ever leaves your device — we never see or store the raw Android ID</li>
+        <li>This hashed ID is used only to identify your device within our system</li>
+        <li>Basic device/app info (app version, install date) is also sent to our server for registration and support purposes</li>
       </ul>
     </div>
 
@@ -212,11 +213,13 @@
   </div>
 
   <div class="card">
-    <h2><span class="num">6</span> Data Retention</h2>
+    <h2><span class="num">6</span> Data Retention &amp; Deletion</h2>
     <ul>
       <li>Local trip records are kept until you manually clear them in the App</li>
-      <li>Device registration records on our server are retained while the App is in use and for up to 12 months after the device is deregistered</li>
-      <li>You may request deletion of your server-side data by contacting us</li>
+      <li>Device registration records on our server are retained while the App is in use</li>
+      <li>You can permanently delete your data at any time using the <strong>Delete My Data</strong> option in the App's Settings screen. This immediately and permanently deletes your driver profile and all trip history from our server</li>
+      <li>After using Delete My Data, the device is locked out of app access and re-registration for 24 hours as a security measure, then may register again as a new profile</li>
+      <li>You may also request deletion of your server-side data by contacting us directly</li>
     </ul>
   </div>
 
