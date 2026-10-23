@@ -129,7 +129,7 @@
 <div class="container">
 
   <div class="meta-bar">
-    <span><span class="dot"></span> Effective Date: August 2026</span>
+    <span><span class="dot"></span> Effective Date: October 2026</span>
     <span><span class="dot"></span> Developer: Ishara Creations</span>
     <span><span class="dot"></span> Region: Sri Lanka</span>
   </div>
@@ -147,14 +147,23 @@
       <h3>a) Location Data</h3>
       <ul>
         <li>Your device's GPS location is accessed in real time during active trips</li>
-        <li>Location is used solely to calculate trip distance, speed, and fare</li>
-        <li>Location data is <strong>NOT</strong> stored on our servers</li>
+        <li>Location is used solely to calculate trip distance, speed, and fare, and to work out your district (see b below)</li>
+        <li>Your GPS coordinates are <strong>NOT</strong> stored on our servers</li>
         <li>Location data is <strong>NOT</strong> shared with any third party</li>
       </ul>
     </div>
 
     <div class="sub-section">
-      <h3>b) Driver Profile Information</h3>
+      <h3>b) District</h3>
+      <ul>
+        <li>The App uses your device's approximate location to work out which of Sri Lanka's districts you work in</li>
+        <li>This is worked out <strong>on your phone</strong>. Only the district name (for example "Kandy") is sent to our server, never your coordinates</li>
+        <li>The district is a general area, not your address or live position</li>
+      </ul>
+    </div>
+
+    <div class="sub-section">
+      <h3>c) Driver Profile Information</h3>
       <ul>
         <li>Name, vehicle number, and contact number you provide during setup</li>
         <li>This information is stored locally on your device</li>
@@ -163,7 +172,7 @@
     </div>
 
     <div class="sub-section">
-      <h3>c) Device Identifier</h3>
+      <h3>d) Device Identifier</h3>
       <ul>
         <li>A device identifier is generated from your device's Android ID, then hashed (SHA-256) before it ever leaves your device — we never see or store the raw Android ID</li>
         <li>This hashed ID is used only to identify your device within our system</li>
@@ -172,10 +181,29 @@
     </div>
 
     <div class="sub-section">
-      <h3>d) Trip Records</h3>
+      <h3>e) Trip Records</h3>
       <ul>
         <li>Trip history (distance, fare, date, duration) is stored locally on your device</li>
-        <li>Trip records are <strong>never</strong> uploaded to our servers</li>
+        <li>Individual trip records are <strong>never</strong> uploaded to our servers</li>
+        <li>When a trip is completed, only summary figures (such as fare, distance and duration) are sent and added to combined daily totals for statistics. These totals do not list individual trips</li>
+      </ul>
+    </div>
+
+    <div class="sub-section">
+      <h3>f) Shared Receipts</h3>
+      <ul>
+        <li>A receipt image is uploaded <strong>only when you choose to share a receipt using the QR code</strong>. Receipts are not uploaded automatically</li>
+        <li>The receipt shows the trip details and the driver details displayed on it (such as your name, vehicle number and contact number)</li>
+        <li>The receipt can be viewed by <strong>anyone who has the link or scans the QR code</strong>, so please share it only with your passenger</li>
+        <li>Receipt images are deleted automatically after 30 days</li>
+      </ul>
+    </div>
+
+    <div class="sub-section">
+      <h3>g) Notifications</h3>
+      <ul>
+        <li>To send you announcements and push notifications, we store a notification token for your device</li>
+        <li>We may record whether an announcement was opened on your device</li>
       </ul>
     </div>
   </div>
@@ -187,6 +215,9 @@
       <li>To register your device and provide app access</li>
       <li>To provide driver profile identification within the App</li>
       <li>To generate trip history and earnings summaries on your device</li>
+      <li>To let you share a trip receipt with your passenger</li>
+      <li>To produce combined, anonymous statistics about how the App is used (such as the number of drivers in each district)</li>
+      <li>To send you announcements and notifications</li>
     </ul>
     <div class="highlight" style="margin-top:16px;">
       We do <strong>NOT</strong> use your data for advertising or marketing. We do <strong>NOT</strong> sell, rent, or trade your personal data to any third party.
@@ -205,8 +236,9 @@
   <div class="card">
     <h2><span class="num">5</span> Permissions Used</h2>
     <ul>
-      <li><strong>Location Access</strong> — GPS used to calculate distance and speed during trips</li>
+      <li><strong>Location Access</strong> — GPS used to calculate distance and speed during trips, and your approximate area to work out your district</li>
       <li><strong>Internet Access</strong> — required for device registration and fare rate updates</li>
+      <li><strong>Notifications</strong> — to show announcements and notifications</li>
       <li><strong>Bluetooth Access</strong> — optional, used for thermal receipt printer</li>
       <li><strong>Display Over Other Apps</strong> — used to show floating fare widget over Google Maps</li>
     </ul>
@@ -217,6 +249,7 @@
     <ul>
       <li>Local trip records are kept until you manually clear them in the App</li>
       <li>Device registration records on our server are retained while the App is in use</li>
+      <li>Shared receipt images are deleted automatically after 30 days, and immediately when you use Delete My Data</li>
       <li>You can permanently delete your data at any time using the <strong>Delete My Data</strong> option in the App's Settings screen. This immediately and permanently deletes your driver profile and all trip history from our server</li>
       <li>After using Delete My Data, the device is locked out of app access and re-registration for 24 hours as a security measure, then may register again as a new profile</li>
       <li>You may also request deletion of your server-side data by contacting us directly</li>
