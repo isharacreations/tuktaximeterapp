@@ -150,14 +150,15 @@
         <li>Location is used solely to calculate trip distance, speed, and fare, to apply the fare rates for the area you are driving in, and to work out your district (see b below)</li>
         <li>Your GPS coordinates are <strong>NOT</strong> stored on our servers</li>
         <li>Location data is <strong>NOT</strong> shared with any third party</li>
+        <li>The App does <strong>NOT</strong> collect your location when it is closed or in the background, other than the GPS tracking of a trip that you have started, which runs as a visible foreground notification until the trip ends</li>
       </ul>
     </div>
 
     <div class="sub-section">
       <h3>b) District</h3>
       <ul>
-        <li>The App uses your device's approximate location to work out which of Sri Lanka's districts you work in</li>
-        <li>This is worked out <strong>on your phone</strong>. Only the district name (for example "Kaduwela") is sent to our server, never your coordinates</li>
+        <li>While the App is open, it occasionally (at most once every few hours) uses your device's approximate location to work out which of Sri Lanka's 25 districts you mainly work in</li>
+        <li>This is worked out <strong>on your phone</strong>. Only the district name or code (for example "Colombo") is sent to our server, never your coordinates</li>
         <li>The district is a general area, not your address or live position</li>
         <li>In some districts the fare rates are different (for example in hilly areas). During a trip, your phone checks which district you are driving through so that the correct rates are applied. This check happens <strong>on your phone only</strong> and is not sent to our server</li>
       </ul>
@@ -188,13 +189,14 @@
         <li>Your trip history list is <strong>never</strong> uploaded to our servers. The only individual trip details that leave your phone are those shown on the trip receipt image (see f below)</li>
         <li>When a trip is completed, summary figures (fare, distance, whether the day or night rate applied, and whether the trip was started with Google Maps) are sent and added to combined daily totals, grouped by district. These totals do not list individual trips</li>
         <li>To count how many drivers were active each day, we also note the date of your most recent completed trip</li>
+        <li>We keep a running count of how many trips your device has completed, linked to your hashed device identifier</li>
       </ul>
     </div>
 
     <div class="sub-section">
       <h3>f) Trip Receipts</h3>
       <ul>
-        <li>When a trip ends, the App automatically creates a receipt image for it and uploads it to our secure storage, so that it is ready if you want to show your passenger a QR code</li>
+        <li>When a trip ends, the App automatically creates a receipt image for it and uploads it to our secure storage, so that it is ready if you want to show your passenger a QR code. Very short test trips are skipped</li>
         <li>The receipt shows the trip details (such as fare, distance, duration and date) and the driver details displayed on it (such as your name, vehicle number and contact number)</li>
         <li>The receipt is not listed or published anywhere. It can be opened only with its private link, which is known to your phone and is passed on only if you share the QR code. However, <strong>anyone who has the link or scans the QR code can view the receipt</strong>, so please share it only with your passenger</li>
         <li>Receipt images are deleted automatically after 30 days, and immediately when you use Delete My Data</li>
@@ -205,7 +207,7 @@
       <h3>g) Notifications</h3>
       <ul>
         <li>To send you announcements and push notifications, we store a notification token for your device</li>
-        <li>We may record whether an announcement was opened on your device</li>
+        <li>We do not record whether or when you opened an announcement</li>
       </ul>
     </div>
   </div>
@@ -239,10 +241,12 @@
     <h2><span class="num">5</span> Permissions Used</h2>
     <ul>
       <li><strong>Location Access</strong> — GPS used to calculate distance and speed during trips, and your approximate area to work out your district and the fare rates that apply there</li>
+      <li><strong>Foreground Service (Location)</strong> — keeps trip tracking and the floating fare widget running while a trip is in progress, with a visible notification</li>
       <li><strong>Internet Access</strong> — required for device registration and fare rate updates</li>
-      <li><strong>Notifications</strong> — to show announcements and notifications</li>
+      <li><strong>Notifications</strong> — to show announcements and notifications, and the trip-in-progress notice</li>
       <li><strong>Bluetooth Access</strong> — optional, used for thermal receipt printer</li>
       <li><strong>Display Over Other Apps</strong> — used to show floating fare widget over Google Maps</li>
+      <li><strong>Battery settings (no permission needed)</strong> — the App may open your phone's battery settings once, so you can choose to stop Android pausing trip tracking during a ride. The choice is entirely yours, nothing is collected, and you can change it at any time in your phone's settings</li>
     </ul>
   </div>
 
@@ -253,7 +257,9 @@
       <li>Device registration records on our server are retained while the App is in use</li>
       <li>Receipt images are deleted automatically after 30 days, and immediately when you use Delete My Data</li>
       <li>You can permanently delete your data at any time using the <strong>Delete My Data</strong> option in the App's Settings screen. This immediately and permanently removes your driver profile details (name, contact number, vehicle number and district) and your receipt images from our server</li>
+      <li>A remaining record that no longer identifies you (hashed device identifier, install date, app version and trip count) is kept for up to 30 days in case of accidental deletion or support needs, and then permanently erased</li>
       <li>After using Delete My Data, the device is locked out of app access and re-registration for 24 hours as a security measure, then may register again as a new profile</li>
+      <li>Combined daily statistics do not identify individual drivers and are not deleted</li>
       <li>You may also request deletion of your server-side data by contacting us directly</li>
     </ul>
   </div>
